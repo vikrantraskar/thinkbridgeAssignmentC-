@@ -1,0 +1,50 @@
+﻿@model inventoryapp.Models.Inventory
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit Product details</title>
+</head>
+<body>
+    <div align="center">
+        <h1>Edit the details of product</h1>
+        <form action="/Home/AfterUpdate" method="post">
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td>
+                        <input type="text" name="Name" value="@Model.name" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td>
+                        <input type="text" name="Description" value="@Model.description" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Price</td>
+                    <td>
+                        <input type="number" name="Unit_price" value="@Model.unit_price" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Quantity</td>
+                    <td>
+                        <input type="number" name="Qty" value="@Model.qty" />
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <br />
+            <input type="submit" value="Update details" />
+            <br />
+            <br />
+            <a href="/Home/Index">Go Home</a>
+        </form>
+    </div>
+</body>
+</html>
+

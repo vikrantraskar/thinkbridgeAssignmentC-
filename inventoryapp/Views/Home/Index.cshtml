@@ -1,0 +1,54 @@
+﻿
+
+@model List<inventoryapp.Models.Inventory>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div align="center">
+        <h1>Product Details </h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Product Id</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var inventory in Model)
+                {
+                    <tr>
+                        <td>@inventory.product_id</td>
+                        <td>@inventory.name</td>
+                        <td>@inventory.description</td>
+                        <td>@inventory.unit_price</td>
+                        <td>@inventory.qty</td>
+
+                        <td><a style="color:green" href="/Home/Update/@inventory.product_id">Edit</a></td>
+
+                        <td><a style="color:red" href="/Home/Delete/@inventory.product_id">Delete</a></td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+        <br />
+        <br />
+        <a href="/Home/Add">Add Item</a>
+        <br />
+        <br />
+        
+    </div>
+</body>
+</html>
+
